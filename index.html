@@ -18,6 +18,8 @@
     --green-light: #8FB89A;
     --flag: #A6521F;
     --flag-light: #E0A87C;
+    --slate: #3B5A73;
+    --slate-light: #93B4C7;
     --mono-bg: #EFEFEA;
   }
   *{box-sizing:border-box;}
@@ -118,6 +120,7 @@
     margin:0 0 26px;
   }
   .register-row .id{font-weight:600;}
+  #ai-controls-harness .register-row .id{color:var(--slate);}
   #risk-triage .register-row .id{color:var(--green);}
   #portfolio-monitor .register-row .id{color:var(--flag);}
   .register-row .flag-tag{color:var(--flag);}
@@ -129,6 +132,7 @@
     border-radius:4px;
     border-left:4px solid var(--rule);
   }
+  #ai-controls-harness{border-left-color:var(--slate);}
   #risk-triage{border-left-color:var(--green);}
   #portfolio-monitor{border-left-color:var(--flag);}
   section.project h2{
@@ -169,6 +173,7 @@
     display:inline-block;
   }
   .btn.primary{background:var(--ink); color:var(--bg);}
+  #ai-controls-harness .btn.primary{background:var(--slate); border-color:var(--slate);}
   #risk-triage .btn.primary{background:var(--green); border-color:var(--green);}
   #portfolio-monitor .btn.primary{background:var(--flag); border-color:var(--flag);}
   .btn:hover{opacity:0.75;}
@@ -241,6 +246,7 @@
   <div class="bar">
     <span class="name">UDAY SIDHU</span>
     <nav>
+      <a href="#ai-controls-harness">AI Control Test Harness</a>
       <a href="#risk-triage">Risk Triage Agent</a>
       <a href="#portfolio-monitor">Portfolio Monitor</a>
       <a href="#contact">Contact</a>
@@ -253,13 +259,39 @@
 
   <section class="hero">
     <span class="eyebrow">Uday Sidhu — Projects</span>
-    <h1>Two AI agents I built.</h1>
-    <p>One triages organizational risk, the other watches my own stock portfolio. Same idea both times: let the AI do the judgment, let plain code do the scoring.</p>
+    <h1>AI projects I've built:</h1>
+    <p>One audits an AI's own decisions for accuracy and drift, one triages organizational risk, and one watches my own stock portfolio. Same idea every time: let the AI do the judgment, let plain code do the scoring — and checking.</p>
+  </section>
+
+  <section class="project reveal" id="ai-controls-harness">
+    <div class="register-row">
+      <span><span class="id">01</span> / AI CONTROL TEST HARNESS</span>
+      <span>STATUS · <span class="flag-tag">LIVE</span></span>
+      <span>STACK · Python, Claude API, hash-chained evidence logging, static site reporting</span>
+    </div>
+
+    <h2>A test harness that audits an AI classification step for accuracy, consistency, and drift.</h2>
+    <p class="lede">
+      Runs an AI classification step from a mock revenue process through a full audit: scored against a human-approved answer key, logged in a tamper-evident hash-chained record, and re-tested across model and policy changes to catch drift before it reaches production.
+    </p>
+
+    <div class="cta-row">
+      <a class="btn primary" href="https://udaysidhu212.github.io/ai-controls-harness/" target="_blank" rel="noopener">View the project →</a>
+      <a class="btn" href="https://github.com/udaysidhu212/ai-controls-harness" target="_blank" rel="noopener">View code →</a>
+    </div>
+    <p class="cta-note">Static report — includes full methodology, results, a reviewer test, and the golden-set CSV.</p>
+
+    <ul class="mechanics">
+      <li>Every AI call is logged in a tamper-evident, hash-chained record for full auditability.</li>
+      <li>Outputs are scored against a human-approved answer key to measure accuracy and consistency.</li>
+      <li>The same test set re-runs across model and policy versions to catch drift before it reaches production.</li>
+      <li>Includes a seeded-error reviewer test and a risk-and-control matrix mapping failure modes to detective and preventive controls.</li>
+    </ul>
   </section>
 
   <section class="project reveal" id="risk-triage">
     <div class="register-row">
-      <span><span class="id">01</span> / RISK TRIAGE AGENT</span>
+      <span><span class="id">02</span> / RISK TRIAGE AGENT</span>
       <span>STATUS · <span class="flag-tag">LIVE</span></span>
       <span>STACK · Claude API, JavaScript</span>
     </div>
@@ -290,7 +322,7 @@
 
   <section class="project reveal" id="portfolio-monitor">
     <div class="register-row">
-      <span><span class="id">02</span> / PORTFOLIO MONITOR</span>
+      <span><span class="id">03</span> / PORTFOLIO MONITOR</span>
       <span>STATUS · <span class="flag-tag">LIVE</span>, runs 3×/week</span>
       <span>STACK · Python, Claude API, GitHub Actions</span>
     </div>
